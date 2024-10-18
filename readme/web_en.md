@@ -1,7 +1,7 @@
 # Cnote - Web Clipper Extension
 
 <p align="center">
-    【English   |   <a href="../cn-index.html">中文</a>】
+    【English   |   <a href="cn-index.html">中文</a>】
 </p>
 
 **Cnote** is a simple and efficient browser extension that helps users clip content from web pages into Markdown notes. It supports multi-format export and cloud synchronization to keep your notes accessible across devices.

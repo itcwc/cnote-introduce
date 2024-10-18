@@ -1,7 +1,7 @@
 # Cnote - Web Clipper Extension
 
 <p align="center">
-    【<a href="../index.html">English</a>   |   中文】
+    【<a href="index.html">English</a>   |   中文】
 </p>
 
 **Cnote** 是一款简单高效的浏览器扩展，帮助用户在浏览网页时将内容保存为笔记，并支持多种格式导出与云同步。
