@@ -1,7 +1,7 @@
 # Cnote - Web Clipper Extension
 
 <p align="center">
-    【English   |   <a href="readme/README-Chinese.md">中文</a>】
+    【English   |   <a href="../cn-index.html">中文</a>】
 </p>
 
 **Cnote** is a simple and efficient browser extension that helps users clip content from web pages into Markdown notes. It supports multi-format export and cloud synchronization to keep your notes accessible across devices.
@@ -30,23 +30,23 @@
 ---
 
 ## 📸 **Screenshots**
-* Add text to notes 
- 
+* Add text to notes
+
   ![Add text to notes](./images/en/e1.png)
 
-* Editor  
+* Editor
 
   ![Editor](./images/en/e2.png)
 
-* Add image to notes  
+* Add image to notes
 
   ![Add image to notes](./images/en/e3.png)
 
-* Image in editor  
+* Image in editor
 
   ![Image in editor](./images/en/e4.png)
 
-* Settings  
+* Settings
 
   ![Settings](./images/en/e5.png)
 
@@ -55,8 +55,8 @@
 ## 📄 **Privacy Policy**
 
 We are committed to protecting your privacy and ensuring your data is secure. For more details, please refer to our privacy policy:  
-- [Privacy Policy (CN)](https://itcwc.github.io/c-note-extension/cn/privacy-policy.html)  
-- [Privacy Policy (EN)](https://itcwc.github.io/c-note-extension/en/privacy-policy.html)  
+- [Privacy Policy (CN)](https://your-username.github.io/c-note-extension/cn/privacy-policy.html)  
+- [Privacy Policy (EN)](https://your-username.github.io/c-note-extension/en/privacy-policy.html)  
 
 ---
 
