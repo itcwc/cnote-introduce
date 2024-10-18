@@ -50,8 +50,8 @@
 ## 📄 **Privacy Policy**
 
 We are committed to protecting your privacy and ensuring your data is secure. For more details, please refer to our privacy policy:  
-- [Privacy Policy (CN)](https://your-username.github.io/c-note-extension/cn/privacy-policy.html)  
-- [Privacy Policy (EN)](https://your-username.github.io/c-note-extension/en/privacy-policy.html)  
+- [Privacy Policy (CN)](https://itcwc.github.io/c-note-extension/cn/privacy-policy.html)  
+- [Privacy Policy (EN)](https://itcwc.github.io/c-note-extension/en/privacy-policy.html)  
 
 ---
 
