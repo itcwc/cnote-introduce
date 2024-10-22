@@ -18,7 +18,7 @@
 ## 🚀 **安装指南**
 
 ### **Chrome 浏览器**
-1. 前往 [Chrome Web Store](https://chromewebstore.google.com/detail/adckfinclpmhjnijmeeejkdhocikacgd/preview?hl=zh-CN&authuser=0) 下载并安装插件。
+1. 前往 [Chrome Web Store](https://chromewebstore.google.com/detail/c-note-%E5%B0%86%E7%BD%91%E9%A1%B5%E5%86%85%E5%AE%B9%E6%B7%BB%E5%8A%A0%E5%88%B0md%E7%AC%94%E8%AE%B0/adckfinclpmhjnijmeeejkdhocikacgd?hl=zh-CN&authuser=0) 下载并安装插件。
 2. 安装完成后，右键点击选中的网页内容，选择“添加内容到新笔记”。
 
 ### **Edge 浏览器**
