@@ -20,7 +20,7 @@
 ## 🚀 **Installation Guide**
 
 ### **For Chrome Browser**
-1. Visit the [Chrome Web Store](https://chromewebstore.google.com/detail/adckfinclpmhjnijmeeejkdhocikacgd/preview?hl=zh-CN&authuser=0) to download and install the extension.
+1. Visit the [Chrome Web Store](https://chromewebstore.google.com/detail/c-note-add-web-page-conte/adckfinclpmhjnijmeeejkdhocikacgd?authuser=0&hl=en) to download and install the extension.
 2. Once installed, right-click on any selected text and choose "Add to New Note."
 
 ### **For Edge Browser**
