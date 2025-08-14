@@ -3,89 +3,305 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>隐私协议 - cnote</title>
+    <title>隐私政策 - cnote</title>
+    <!-- 引入Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- 引入Font Awesome -->
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    
+    <!-- 配置Tailwind主题 -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#4F46E5', // 主色调：深紫色，传达信任和专业
+                        secondary: '#EC4899', // 辅助色：柔和粉色
+                        neutral: {
+                            100: '#F9FAFB',
+                            200: '#F3F4F6',
+                            300: '#E5E7EB',
+                            700: '#374151',
+                            800: '#1F2937',
+                            900: '#111827'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    
+    <!-- 自定义工具类 -->
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .text-balance {
+                text-wrap: balance;
+            }
+            .section-fade {
+                opacity: 0;
+                transform: translateY(20px);
+                transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+            }
+            .section-visible {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+    
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            margin: 0;
-            padding: 0;
+        /* 导入Inter字体 */
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        
+        /* 平滑滚动 */
+        html {
+            scroll-behavior: smooth;
         }
-        .container {
-            max-width: 800px;
-            margin: 50px auto;
-            background-color: #fff;
-            padding: 20px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            border-radius: 8px;
-        }
-        h1 {
-            text-align: center;
-            color: #333;
-        }
-        h2 {
-            color: #555;
-            border-bottom: 2px solid #ddd;
-            padding-bottom: 5px;
-        }
-        p {
-            line-height: 1.6;
-            color: #666;
-        }
-        ul {
-            margin-left: 20px;
-        }
-        li {
-            margin-bottom: 8px;
-        }
-        .footer {
-            text-align: center;
-            margin-top: 20px;
-            font-size: 14px;
-            color: #aaa;
+        
+        /* 导航栏滚动效果 */
+        .navbar-scrolled {
+            @apply bg-white/90 backdrop-blur-sm shadow-md;
         }
     </style>
 </head>
-<body>
-    <div class="container">
-        <h1>隐私协议</h1>
-
-        <h2>1. 数据收集与使用</h2>
-        <p>本插件不会收集任何个人身份信息（如姓名、电子邮件、电话号码等）。插件可能会使用以下数据以实现核心功能：</p>
-        <ul>
-            <li>用户设置和偏好：如主题、语言配置，存储在Chrome的storage中以确保多设备同步。</li>
-            <li>当前标签页内容：在用户触发操作时访问，用于提取文字或保存页面信息。</li>
-        </ul>
-
-        <h2>2. 请求权限说明</h2>
-        <ul>
-            <li><b>activeTab 和 tabs：</b>获取当前标签页的URL或内容，仅在用户主动操作时使用。</li>
-            <li><b>storage：</b>用于存储用户的配置数据和笔记，并实现多设备同步。</li>
-            <li><b>contextMenus：</b>创建自定义右键菜单项，方便用户快捷地执行操作。</li>
-            <li><b>scripting：</b>向页面中注入代码（如高亮文字），用于实现插件的交互功能。</li>
-            <li><b>notifications：</b>向用户发送通知，提示操作成功或重要事件。</li>
-        </ul>
-
-        <h2>3. 数据安全</h2>
-        <p>所有数据均保存在用户的本地设备或通过Chrome同步存储，插件不会将数据上传到远程服务器或第三方。</p>
-
-        <h2>4. 用户权利</h2>
-        <p>用户可以随时查看、编辑或删除插件存储的数据。如不再使用插件，用户可卸载插件并删除所有相关数据。</p>
-
-        <h2>5. 第三方服务与共享</h2>
-        <p>本插件不与任何第三方共享数据，也不使用第三方服务进行数据处理。</p>
-
-        <h2>6. 变更通知</h2>
-        <p>如隐私协议有更新，我们会通过插件更新日志通知用户。继续使用插件即表示用户接受新的隐私政策。</p>
-
-        <h2>7. 联系我们</h2>
-        <p>若有任何疑问或反馈，请通过以下方式联系我们：<br>
-           <b>邮箱：</b> <a href="itcwccc@gmail.com">itcwccc@gmail.com</a>
-        </p>
-
-        <div class="footer">
-            <p>&copy; 2024 cnote. 保留所有权利。</p>
+<body class="bg-neutral-100 font-sans text-neutral-800">
+    <!-- 导航栏 -->
+    <header id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 py-4">
+        <div class="container mx-auto px-4 md:px-6 flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                <i class="fa fa-sticky-note-o text-primary text-2xl"></i>
+                <span class="font-semibold text-xl text-neutral-800">cnote</span>
+            </div>
+<!--             <nav>
+                <ul class="hidden md:flex space-x-8">
+                    <li><a href="#" class="text-neutral-700 hover:text-primary transition-colors">首页</a></li>
+                    <li><a href="#" class="text-neutral-700 hover:text-primary transition-colors">功能</a></li>
+                    <li><a href="#" class="text-primary font-medium">隐私政策</a></li>
+                    <li><a href="#" class="text-neutral-700 hover:text-primary transition-colors">联系我们</a></li>
+                </ul>
+                <button class="md:hidden text-neutral-800">
+                    <i class="fa fa-bars text-xl"></i>
+                </button>
+            </nav> -->
         </div>
-    </div>
+    </header>
+
+    <!-- 主内容区 -->
+    <main class="container mx-auto px-4 md:px-6 pt-28 pb-16 max-w-4xl">
+        <div class="bg-white rounded-2xl shadow-lg overflow-hidden">
+            <!-- 头部横幅 -->
+            <div class="bg-gradient-to-r from-primary to-secondary p-8 md:p-12 text-white">
+                <h1 class="text-3xl md:text-4xl font-bold mb-3">隐私政策</h1>
+                <p class="opacity-90 max-w-2xl">您的隐私对我们至关重要。本政策解释了在使用cnote时，我们如何收集、使用和保护您的信息。</p>
+            </div>
+            
+            <!-- 政策内容 -->
+            <div class="p-6 md:p-10 space-y-10">
+                <!-- 数据收集与使用 -->
+                <section class="section-fade">
+                    <div class="flex items-center mb-4">
+                        <div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center mr-4">
+                            <i class="fa fa-database text-primary"></i>
+                        </div>
+                        <h2 class="text-2xl font-semibold text-neutral-800">1. 数据收集与使用</h2>
+                    </div>
+                    <div class="pl-14">
+                        <p class="text-neutral-700 leading-relaxed mb-4 text-balance">
+                            本插件不收集任何个人身份信息（如姓名、电子邮件地址或电话号码）。但是，为了实现核心功能，它可能会使用以下数据：
+                        </p>
+                        <ul class="space-y-3 text-neutral-700 pl-5">
+                            <li class="flex items-start">
+                                <i class="fa fa-check-circle text-primary mt-1 mr-2"></i>
+                                <span>用户设置和偏好：如主题或语言设置，存储在Chrome的存储中以便跨设备同步。</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fa fa-check-circle text-primary mt-1 mr-2"></i>
+                                <span>当前标签页内容：仅在用户操作时访问，用于提取文本或保存网页信息。</span>
+                            </li>
+                        </ul>
+                    </div>
+                </section>
+                
+                <!-- 权限说明 -->
+                <section class="section-fade">
+                    <div class="flex items-center mb-4">
+                        <div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center mr-4">
+                            <i class="fa fa-key text-primary"></i>
+                        </div>
+                        <h2 class="text-2xl font-semibold text-neutral-800">2. 请求的权限</h2>
+                    </div>
+                    <div class="pl-14">
+                        <ul class="space-y-4 text-neutral-700 pl-5">
+                            <li class="flex items-start p-3 bg-neutral-50 rounded-lg hover:bg-neutral-100 transition-colors">
+                                <div class="min-w-[180px] font-medium">activeTab 和 tabs：</div>
+                                <div>仅在用户操作时访问当前标签页的URL或内容。</div>
+                            </li>
+                            <li class="flex items-start p-3 bg-neutral-50 rounded-lg hover:bg-neutral-100 transition-colors">
+                                <div class="min-w-[180px] font-medium">storage：</div>
+                                <div>存储用户设置和笔记，以实现跨设备同步。</div>
+                            </li>
+                            <li class="flex items-start p-3 bg-neutral-50 rounded-lg hover:bg-neutral-100 transition-colors">
+                                <div class="min-w-[180px] font-medium">contextMenus：</div>
+                                <div>添加自定义右键菜单选项，用于快速操作。</div>
+                            </li>
+                            <li class="flex items-start p-3 bg-neutral-50 rounded-lg hover:bg-neutral-100 transition-colors">
+                                <div class="min-w-[180px] font-medium">scripting：</div>
+                                <div>向网页注入代码（例如高亮文本）以实现交互功能。</div>
+                            </li>
+                            <li class="flex items-start p-3 bg-neutral-50 rounded-lg hover:bg-neutral-100 transition-colors">
+                                <div class="min-w-[180px] font-medium">notifications：</div>
+                                <div>发送通知，告知用户重要事件或操作成功。</div>
+                            </li>
+                        </ul>
+                    </div>
+                </section>
+                
+                <!-- 数据安全 -->
+                <section class="section-fade">
+                    <div class="flex items-center mb-4">
+                        <div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center mr-4">
+                            <i class="fa fa-shield text-primary"></i>
+                        </div>
+                        <h2 class="text-2xl font-semibold text-neutral-800">3. 数据安全</h2>
+                    </div>
+                    <div class="pl-14">
+                        <p class="text-neutral-700 leading-relaxed text-balance">
+                            所有数据均存储在用户的设备本地或通过Chrome的存储进行同步。本插件不会将任何数据传输到远程服务器或第三方。
+                        </p>
+                    </div>
+                </section>
+                
+                <!-- 用户权利 -->
+                <section class="section-fade">
+                    <div class="flex items-center mb-4">
+                        <div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center mr-4">
+                            <i class="fa fa-user text-primary"></i>
+                        </div>
+                        <h2 class="text-2xl font-semibold text-neutral-800">4. 用户权利</h2>
+                    </div>
+                    <div class="pl-14">
+                        <p class="text-neutral-700 leading-relaxed text-balance">
+                            用户可以随时查看、编辑或删除本插件存储的数据。如果用户不再希望使用本插件，可以卸载它并移除所有相关数据。
+                        </p>
+                    </div>
+                </section>
+                
+                <!-- 第三方服务 -->
+                <section class="section-fade">
+                    <div class="flex items-center mb-4">
+                        <div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center mr-4">
+                            <i class="fa fa-handshake-o text-primary"></i>
+                        </div>
+                        <h2 class="text-2xl font-semibold text-neutral-800">5. 第三方服务与数据共享</h2>
+                    </div>
+                    <div class="pl-14">
+                        <p class="text-neutral-700 leading-relaxed text-balance">
+                            本插件不与任何第三方共享数据，也不使用第三方服务处理数据。
+                        </p>
+                    </div>
+                </section>
+                
+                <!-- 政策变更 -->
+                <section class="section-fade">
+                    <div class="flex items-center mb-4">
+                        <div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center mr-4">
+                            <i class="fa fa-refresh text-primary"></i>
+                        </div>
+                        <h2 class="text-2xl font-semibold text-neutral-800">6. 政策变更</h2>
+                    </div>
+                    <div class="pl-14">
+                        <p class="text-neutral-700 leading-relaxed text-balance">
+                            如果本隐私政策有更新，用户将通过插件的更新日志得到通知。继续使用插件即表示接受更新后的政策。
+                        </p>
+                    </div>
+                </section>
+                
+                <!-- 联系我们 -->
+                <section class="section-fade">
+                    <div class="flex items-center mb-4">
+                        <div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center mr-4">
+                            <i class="fa fa-envelope text-primary"></i>
+                        </div>
+                        <h2 class="text-2xl font-semibold text-neutral-800">7. 联系我们</h2>
+                    </div>
+                    <div class="pl-14">
+                        <p class="text-neutral-700 leading-relaxed mb-4 text-balance">
+                            如果您有任何问题或反馈，请通过以下方式联系我们：
+                        </p>
+                        <div class="flex items-center p-4 bg-primary/5 rounded-lg">
+                            <i class="fa fa-envelope-o text-primary mr-3"></i>
+                            <a href="mailto:itcwccc@gmail.com" class="text-primary hover:text-primary/80 font-medium transition-colors">itcwccc@gmail.com</a>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+    
+    <!-- 页脚 -->
+<!--     <footer class="bg-neutral-800 text-white py-10">
+        <div class="container mx-auto px-4 md:px-6 max-w-4xl">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="flex items-center space-x-2 mb-4 md:mb-0">
+                    <i class="fa fa-sticky-note-o text-primary text-2xl"></i>
+                    <span class="font-semibold text-xl">cnote</span>
+                </div>
+                <div class="flex space-x-6 mb-4 md:mb-0">
+                    <a href="#" class="text-neutral-300 hover:text-white transition-colors">
+                        <i class="fa fa-github text-xl"></i>
+                    </a>
+                    <a href="#" class="text-neutral-300 hover:text-white transition-colors">
+                        <i class="fa fa-twitter text-xl"></i>
+                    </a>
+                    <a href="#" class="text-neutral-300 hover:text-white transition-colors">
+                        <i class="fa fa-linkedin text-xl"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="border-t border-neutral-700 mt-6 pt-6 text-center text-neutral-400 text-sm">
+                <p>&copy; 2024 cnote. 保留所有权利。</p>
+            </div>
+        </div>
+    </footer> -->
+
+    <!-- JavaScript -->
+    <script>
+        // 导航栏滚动效果
+        window.addEventListener('scroll', function() {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('navbar-scrolled');
+            } else {
+                navbar.classList.remove('navbar-scrolled');
+            }
+        });
+        
+        // 滚动显示动画
+        document.addEventListener('DOMContentLoaded', function() {
+            const sections = document.querySelectorAll('.section-fade');
+            
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.1
+            };
+            
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('section-visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+            
+            sections.forEach(section => {
+                observer.observe(section);
+            });
+        });
+    </script>
 </body>
 </html>
